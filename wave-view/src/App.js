@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import * as React from "react";
+import { ethers } from "ethers";
 import './App.css';
 
-function App() {
+export default function App() {
+
+  const wave = () => {
+    
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mainContainer">
+
+      <div className="dataContainer">
+        <div className="header">
+          <span className="YC">🦄</span>Build things people want
+        </div>
+
+        <div className="bio">
+          What's your next web3 startup idea ? 
+        </div>
+
+        <textarea placeholder="write your idea">
+
+        </textarea>
+        <button className="waveButton" onClick={wave}>
+          Wave at Me
+        </button>
+      </div>
     </div>
   );
 }
-
-export default App;
