@@ -17,6 +17,12 @@ const main = async () => {
     console.log(`🎷 Contract Deployed to :  ${formatAddress(signers[0].address)} 🍺 `);
     console.log(`🎷 Contract Deployed by :  ${formatAddress(signers[9].address)} 🍺 `);
 
+    let tweetTx = await waveContract.tweet("hello ethereum!");
+    tweetTx.wait();
+
+    let tweet = await waveContract.getTweet();
+    console.log(`${tweet}`);
+
     let waveCount
     let waveTx = await waveContract.wave();
     waveCount = await waveContract.getTotalWaves();

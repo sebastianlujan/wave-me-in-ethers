@@ -11,16 +11,15 @@ contract WavePortal {
     }
 
     struct Bros {
-        uint256 totalWaves;
+        uint totalWaves;
         uint256 timeStamp;
-        string message;
+        string   tweet;
     }
 
     mapping( address => Bros ) public brosMap;
 
     // similar to POST
     function wave() public {
-
         countWaves += 1;
 
         brosMap[msg.sender].totalWaves += 1;
@@ -28,8 +27,13 @@ contract WavePortal {
         console.log("%s has waved!", msg.sender);
     }
 
-    function messageMe( string memory message ) public {
-        brosMap[msg.sender].message = message;
+
+    function tweet( string memory message ) public {
+        brosMap[msg.sender].tweet = message;
+    }
+
+    function getTweet() public view returns (string memory) {
+        return brosMap[msg.sender].tweet;
     }
 
     function getDate() public view returns (uint256) {
